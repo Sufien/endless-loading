@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Loading...</title>
+    <style>
+      body {
+        background-color: #111;
+        color: #0f0;
+        font-family: monospace;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .spinner {
+        border: 8px solid #333;
+        border-top: 8px solid #0f0;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        animation: spin 2s linear infinite;
+        margin-bottom: 30px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .progress-bar {
+        width: 300px;
+        height: 20px;
+        background-color: #222;
+        border: 1px solid #0f0;
+        margin-top: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        background-color: #0f0;
+        width: 0%;
+        height: 100%;
+        animation: fillBar 10s linear infinite;
+      }
+
+      @keyframes fillBar {
+        0% {
+          width: 0%;
+        }
+        90% {
+          width: 100%;
+        }
+        100% {
+          width: 0%;
+        }
+      }
+
+      .message {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spinner"></div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+    <div class="message">
+      Loading ultra-secret files...<br />
+      Please wait...<br />
+      Do not refresh or close this window.
+    </div>
+  </body>
+</html>
